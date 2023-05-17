@@ -1,22 +1,26 @@
 # Work Log
 
-## GROUP MEMBER 1
+## Kevin Liu
 
-### date x
+### 05/17/23
+
+- Research information about the chaocipher algorithm
+- Got started on a processing file
+
+### date y
 
 info
+
+
+## Xinqing Lin
+
+### 05/17/23
+
+- Research information about the chaocipher algorithm
 
 ### date y
 
 info
 
-
-## GROUP MEMBER 2
-
-### date x
-
-info
-
-### date y
-
-info
+References and Resources:
+- [Chaocipher Revealed Algorithm](http://www.chaocipher.com/ActualChaocipher/Chaocipher-Revealed-Algorithm.pdf)
