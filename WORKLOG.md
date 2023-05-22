@@ -7,6 +7,10 @@
 - Research information about the chaocipher algorithm
 - Got started on a visualization in Processing
 
+## 05/21/23
+
+- Translated algo described in resources into processing.
+- Got a wheel class up and running.
 ### date y
 
 info
