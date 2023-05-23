@@ -32,6 +32,10 @@ info
 
 - Got started on a brief history for the presentation file
 
+### 5/22/23
+
+- Got started on a python encoder file
+
 References and Resources:
 - [Chaocipher Revealed Algorithm](http://www.chaocipher.com/ActualChaocipher/Chaocipher-Revealed-Algorithm.pdf)
 - [Demo on YouTube](https://www.youtube.com/watch?v=0tL9A69olRc)
