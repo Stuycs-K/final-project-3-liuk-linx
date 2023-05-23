@@ -11,6 +11,7 @@ public class wheels{
   public void display(int x, int y){
     Boolean first = true;
     translate(x,y);
+    rotate((rot/26) * TWO_PI);
     circle(0,0,400);
     for(float g = 0.0; g < 26; g++){
       if(first){
@@ -68,5 +69,18 @@ public class wheels{
     }
     alphabet[13] = temp;
   }
-  
+  public void shift_alp_L(){
+    temp = alphabet[0];
+    for(x = 1; x < 26;x++){
+      alphabet[x-1] = alphabet[x];
+    }
+    alphabet[25] = temp;
+  }
+  public void shift_alp_R(){
+    temp = alphabet[25];
+    for(x = 24; x > 0;x--){
+      alphabet[x+1] = alphabet[x];
+    }
+    alphabet[0] = temp;
+   }
 }

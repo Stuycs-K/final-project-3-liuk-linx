@@ -1,4 +1,5 @@
 int x = 0;
+float rot = 0.0;
 wheels a, b;
 void setup(){
   size(1200, 600);
@@ -18,4 +19,14 @@ void setup(){
 void draw(){
   fill(0);
   a.display(400,400);
+}
+
+void keyPressed(){
+  if(key == CODED){
+    if(keyCode == UP){
+      rot += 1.0;
+    }else if (keyCode == DOWN){
+      rot -= 1;
+    }
+  }
 }
