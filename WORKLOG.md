@@ -9,17 +9,14 @@
 
 ## 05/21/23
 
-- Translated algo described in resources into processing.
-- Got a wheel class up and running.
+- Translated algo described in resources into Processing.
+- Got a wheel class up and running
 
 ## 05/22/23
 
 - Did research into rotation
 - Created a method to rotate wheel, and a display and rotate method for 
 wheel
-### date y
-
-info
 
 
 ## Xinqing Lin
@@ -34,7 +31,13 @@ info
 
 ### 5/22/23
 
-- Got started on a python encoder file
+- Got started on a python encoder
+
+### 5/23/23
+
+- Finished the python encoder
+- Finished the python decoder
+- Added comments for each step in the process for both encoding and decoding
 
 References and Resources:
 - [Chaocipher Revealed Algorithm](http://www.chaocipher.com/ActualChaocipher/Chaocipher-Revealed-Algorithm.pdf)
