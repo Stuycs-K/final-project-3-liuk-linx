@@ -9,7 +9,21 @@ public class wheels{
     linked = connection;
   }
   public void display(int x, int y){
-    
+    Boolean first = true;
+    translate(x,y);
+    circle(0,0,400);
+    for(float g = 0.0; g < 26; g++){
+      if(first){
+        first = false;
+      }else{
+        rotate((1.0/26) * TWO_PI);
+      }
+      fill(255);
+      text(alphabet[int(g)], 0, -190);
+      //text(alphabet[int(g)], (sin((g/26) * TWO_PI) * 200), (cos((g/26) * TWO_PI) * -200));
+      print(sin((g/26) * TWO_PI) * 200);
+      println();
+    }
   }
   public wheels(char[] alphabet, boolean original){
     this.alphabet = alphabet;
