@@ -15,7 +15,8 @@
 ## 05/22/23
 
 - Did research into rotation
-- Created a method to rotate wheel, and a display method for wheel
+- Created a method to rotate wheel, and a display and rotate method for 
+wheel
 ### date y
 
 info
