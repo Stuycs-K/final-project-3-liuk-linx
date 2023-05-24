@@ -34,9 +34,13 @@ void draw(){
 void keyPressed(){
   if(key == CODED){
     if(keyCode == UP){
-      rot += 1.0;
+      rot -= 1.0;
+      a.shift_alp_L();
+      b.shift_alp_R();
     }else if (keyCode == DOWN){
-      rot -= 1;
+      rot += 1;
+      a.shift_alp_R();
+      b.shift_alp_L();
     }
   }
   if(key == ' '){
