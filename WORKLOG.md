@@ -17,6 +17,11 @@
 - Did research into rotation
 - Created a method to rotate wheel, and a display and rotate method for 
 wheel
+
+## 05/23/23
+
+-connected wheels so they rotate how actual wheels do, incorpated the 
+cipher shifts and a way to express decoded messages
 ### date y
 
 info

@@ -1,5 +1,6 @@
 int x = 0;
 float rot = 0.0;
+String text = "";
 wheels a, b;
 void setup(){
   size(1200, 600);
@@ -17,8 +18,17 @@ void setup(){
   a.display(400,400);
 }
 void draw(){
+  background(255);
+  fill(255,0,0);
+  rect(378, 5, 50, 100);
+  fill(0,255,0);
+    rect(778, 5, 50, 100);
   fill(0);
-  a.display(400,400);
+  a.display(400,230);
+  b.display(800,230);
+  fill(0);
+  textAlign(CENTER);
+  text(text,600,500);
 }
 
 void keyPressed(){
@@ -28,5 +38,10 @@ void keyPressed(){
     }else if (keyCode == DOWN){
       rot -= 1;
     }
+  }
+  if(key == ' '){
+    text+=b.alphabet[0];
+    a.shift_original();
+    b.shift_cipher();
   }
 }
