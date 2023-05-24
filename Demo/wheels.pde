@@ -62,9 +62,9 @@ public class wheels{
       alphabet[x+1] = alphabet[x];
       print(alphabet[x]);
     }
-    alphabet[12] = ' ';
+    alphabet[13] = ' ';
     //Insert the previously extracted letter tab into the empty nadir position.
-    alphabet[12] = temp;
+    alphabet[13] = temp;
   }
   public void shift_original(){
     //Disengage the two disks, rotate the right disk one position counter-clockwise (i.e., the current letter at the zenith should rotate to position zenith-1), and reengage the two disks.

@@ -6,6 +6,7 @@ void setup(){
   size(1200, 600);
   String Alp = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   String Alp2 = "QWERTYUIOPASDFGHJKLZXCVBNM";
+  Alp2 = "MNBVCXZLKJHGFDSAPOIUYTREWQ";
   char[] Alp_L = new char[26];
   char[] Alp2_L = new char[26];
   for(int x = 0; x < 26; x++){
@@ -24,8 +25,8 @@ void draw(){
   fill(0,255,0);
     rect(778, 5, 50, 100);
   fill(0);
-  a.display(400,230);
-  b.display(800,230);
+  a.display(800,230);
+  b.display(400,230);
   fill(0);
   textAlign(CENTER);
   text(text,600,500);
