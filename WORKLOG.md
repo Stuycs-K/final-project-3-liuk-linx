@@ -55,6 +55,10 @@ cipher shifts and a way to express decoded messages
 - Added a reset button to the Demo on Processing to clear the text after encrypting
 - Debugged problem with wheels' rotation
 
+### 5/25/23
+
+- Wrote the README.md
+
 References and Resources:
 - [Chaocipher Revealed Algorithm](http://www.chaocipher.com/ActualChaocipher/Chaocipher-Revealed-Algorithm.pdf)
 - [Demo on YouTube](https://www.youtube.com/watch?v=0tL9A69olRc)
