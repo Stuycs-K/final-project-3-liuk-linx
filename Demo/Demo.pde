@@ -1,5 +1,4 @@
 int x = 0;
-float rot = 0.0;
 String text = "";
 int mode = 0;
 int steps = 0;
@@ -7,6 +6,7 @@ int next_steps = 0;
 boolean finish_step = false;
 int time = 0;
 int length = 100;
+boolean encode = true;
 wheels a, b;
 
 int button_x = 80;
@@ -17,6 +17,8 @@ int button_h = 70;
 void setup(){
   size(1200, 600);
   background(138);
+  color color1 = color(255, 0, 0);
+  color color2 = color(0 ,255, 0);
   String Alp = "SGLBIZHJMFTRXAVKNQPDWYCUOE"; //plaintext alphabet
   String Alp2 = "XLEMFHIWOVNYRUDQCJPASGBTKZ"; //ciphertext
   Alp2 = "XZKTBGSAPJCQDURYNVOWIHFMEL"; //ciphertext reversed, keep first character
@@ -26,8 +28,8 @@ void setup(){
     Alp_L[x] = Alp.charAt(x);
     Alp2_L[x] = Alp2.charAt(x);
   }
-  a = new wheels(Alp_L, true); //original
-  b = new wheels(Alp2_L, false, a); //cipher
+  a = new wheels(Alp_L, true, color1); //original
+  b = new wheels(Alp2_L, false, color2, a); //cipher
   a.link(b);
 }
 
@@ -46,11 +48,8 @@ void draw(){
       print(time);
     }
   }else if(steps == 7){
-    char temp2 = a.alphabet[0];
-    for(int x = 1; x<26; x++){
-      a.alphabet[x-1] = a.alphabet[x];
-    }
-    a.alphabet[25] = temp2;
+     a.rot -= 1.0;
+     a.shift_alp_L();
     steps = -1;
     next_steps = 6;
   }else if(steps == 6){
@@ -103,7 +102,6 @@ void draw(){
   rect(button_x, button_y, button_w, button_h, 18);
   fill(255);
   text("Reset", button_x + button_w / 2, button_y + button_h / 2);
-  
   fill(0);
   textAlign(CENTER);
   textSize(30);
@@ -114,22 +112,57 @@ void keyPressed(){
   if(key == CODED){
     if(steps == 0){
       if(keyCode == UP){
-        rot -= 1.0;
+        a.rot -= 1.0;
+        b.rot -= 1.0;
         a.shift_alp_L();
         b.shift_alp_R();
       }else if (keyCode == DOWN){
-        rot += 1;
+        a.rot += 1;
+        b.rot += 1;
         a.shift_alp_R();
         b.shift_alp_L();
       }
     }
   }
+  if(key == 'n'){
+    if(encode){
+      encode = false;
+    }else{
+      encode = true;
+    }
+  }
+  if(key == 'r'){
+    setup();
+    text = "";
+  }
   if(key == ' '){
     //text+=b.alphabet[0];
     //a.shift_original();
     //b.shift_cipher();
-    if(mode == 0){
-      steps = 7;
+    if((mode == 0)&&(steps==0)){
+      steps = -1;
+      next_steps = 7;
+      if(encode){
+        text+=b.alphabet[0];
+      }else{
+        text+=a.alphabet[0];
+      }
+    }else if(mode == 1){
+      if(encode){
+        text+=b.alphabet[0];
+      }else{
+        text+=a.alphabet[0];
+      }    
+    a.shift_original();
+    b.shift_cipher();
+    }
+      
+  }
+  if(key == 'm'){
+    if((mode == 0)&&(steps == 0)){
+      mode = 1;
+    }else if(mode == 1){
+      mode = 0;
     }
   }
 }

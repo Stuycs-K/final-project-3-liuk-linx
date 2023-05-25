@@ -1,12 +1,17 @@
 public class wheels{
+  float rot = 0.0;
   char[] alphabet;
   boolean original;
   char temp;
+  color ani;
+  boolean coloration = false;
   wheels linked = null;
-  public wheels(char[] alphabet, boolean original, wheels connection){
+  public wheels(char[] alphabet, boolean original, color ani, wheels connection){
+    rot = 0.0;
     this.alphabet = alphabet;
     this.original = original;
     linked = connection;
+    this.ani = ani;
   }
   public void display(int x, int y){
     fill(0);
@@ -38,7 +43,8 @@ public class wheels{
      }
     translate(-x,-y);
   }
-  public wheels(char[] alphabet, boolean original){
+  public wheels(char[] alphabet, boolean original, color ani){
+    this.ani = ani;
     this.alphabet = alphabet;
     this.original = original;
   }
@@ -67,6 +73,7 @@ public class wheels{
     alphabet[13] = temp;
   }
   public void shift_original(){
+    rot-=1;
     //Disengage the two disks, rotate the right disk one position counter-clockwise (i.e., the current letter at the zenith should rotate to position zenith-1), and reengage the two disks.
     char temp2 = alphabet[0];
     for(int x = 1; x<26; x++){
