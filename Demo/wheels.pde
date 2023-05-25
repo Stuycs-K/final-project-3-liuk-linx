@@ -21,7 +21,7 @@ public class wheels{
         rotate((1.0/26) * TWO_PI);
       }
       fill(255);
-      text(alphabet[int(g)], 0, -190);
+      text(alphabet[int(g)], 0, -182);
       //text(alphabet[int(g)], (sin((g/26) * TWO_PI) * 200), (cos((g/26) * TWO_PI) * -200));
     }
     rotate((1.0/26) * TWO_PI);
@@ -71,7 +71,7 @@ public class wheels{
     char temp2 = alphabet[0];
     for(int x = 1; x<26; x++){
       alphabet[x-1] = alphabet[x];
-      println(alphabet[x]);
+      //println(alphabet[x]);
     }
     alphabet[25] = temp2;
     take_zenith2();
@@ -94,7 +94,7 @@ public class wheels{
     temp = alphabet[25];
     for(x = 24; x >= 0;x--){
       alphabet[x+1] = alphabet[x];
-      print(alphabet[x+1]);
+      //print(alphabet[x+1]);
     }
     alphabet[0] = temp;
    }

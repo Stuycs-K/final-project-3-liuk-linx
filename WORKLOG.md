@@ -17,24 +17,26 @@
 - Did research into rotation
 - Created a method to rotate wheel, and a display and rotate method for 
 wheel
-<<<<<<< HEAD
 
 ## 05/23/23
 
--connected wheels so they rotate how actual wheels do, incorpated the 
+- Connected wheels so they rotate how actual wheels do, incorporated the 
 cipher shifts and a way to express decoded messages
--Added way to decode message
+- Added way to decode message
+
 ### date y
 
 
 ## Xinqing Lin
 
 ### 05/18/23
+
 - Research information about the chaocipher algorithm
 
 ### 05/20/23
 
 - Got started on a brief history for the presentation file
+- Started on an explanation of the algorithm
 
 ### 5/22/23
 
@@ -45,6 +47,11 @@ cipher shifts and a way to express decoded messages
 - Finished the python encoder
 - Finished the python decoder
 - Added comments for each step in the process for both encoding and decoding
+
+### 5/24/23
+
+- Added a reset button to the Demo on Processing to clear the text after encrypting
+- Debugged problem with wheels' rotation
 
 References and Resources:
 - [Chaocipher Revealed Algorithm](http://www.chaocipher.com/ActualChaocipher/Chaocipher-Revealed-Algorithm.pdf)
