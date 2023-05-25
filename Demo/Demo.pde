@@ -1,6 +1,12 @@
 int x = 0;
 float rot = 0.0;
 String text = "";
+int mode = 0;
+int steps = 0;
+int next_steps = 0;
+boolean finish_step = false;
+int time = 0;
+int length = 100;
 wheels a, b;
 
 int button_x = 80;
@@ -10,6 +16,7 @@ int button_h = 70;
 
 void setup(){
   size(1200, 600);
+  background(138);
   String Alp = "SGLBIZHJMFTRXAVKNQPDWYCUOE"; //plaintext alphabet
   String Alp2 = "XLEMFHIWOVNYRUDQCJPASGBTKZ"; //ciphertext
   Alp2 = "XZKTBGSAPJCQDURYNVOWIHFMEL"; //ciphertext reversed, keep first character
@@ -19,13 +26,67 @@ void setup(){
     Alp_L[x] = Alp.charAt(x);
     Alp2_L[x] = Alp2.charAt(x);
   }
-  a = new wheels(Alp_L, true);
-  b = new wheels(Alp2_L, false, a);
+  a = new wheels(Alp_L, true); //original
+  b = new wheels(Alp2_L, false, a); //cipher
   a.link(b);
-  a.display(400,400);
 }
 
 void draw(){
+  if(steps == -1){
+    if(!(finish_step)){
+      print("a");
+      time = length;
+      finish_step = true;
+    }
+    if(time == 0){
+      steps = next_steps;
+      finish_step = false;
+    }else{ 
+      time-=1;
+      print(time);
+    }
+  }else if(steps == 7){
+    char temp2 = a.alphabet[0];
+    for(int x = 1; x<26; x++){
+      a.alphabet[x-1] = a.alphabet[x];
+    }
+    a.alphabet[25] = temp2;
+    steps = -1;
+    next_steps = 6;
+  }else if(steps == 6){
+    a.take_zenith2();
+     steps = -1;
+    next_steps = 5;
+    }else if(steps == 5){
+    for(int x = 3; x<=13; x++){
+      a.alphabet[x-1] = a.alphabet[x];
+      if(x == 25){
+        x = -1;
+      }
+    }
+    a.alphabet[13] = ' ';
+    steps = -1;
+    next_steps = 4;
+    }else if(steps == 4){
+      a.alphabet[13] = a.temp;
+      steps = -1;
+      next_steps = 3;
+    }else if(steps == 3){
+      b.take_zenith1();
+      steps = -1;
+      next_steps = 2;
+    }else if(steps == 2){
+      for(int x = 24; x >12; x--){
+        b.alphabet[x+1] = b.alphabet[x];
+      }
+      b.alphabet[13] = ' ';
+      steps = -1;
+      next_steps = 1;
+    }else if (steps == 1){
+      b.alphabet[13] = b.temp;
+      steps = -1;
+      next_steps = 0;
+    }
   textSize(16);
   background(138);
   fill(255,0,0);
@@ -51,20 +112,25 @@ void draw(){
 
 void keyPressed(){
   if(key == CODED){
-    if(keyCode == UP){
-      rot -= 1.0;
-      a.shift_alp_L();
-      b.shift_alp_R();
-    }else if (keyCode == DOWN){
-      rot += 1;
-      a.shift_alp_R();
-      b.shift_alp_L();
+    if(steps == 0){
+      if(keyCode == UP){
+        rot -= 1.0;
+        a.shift_alp_L();
+        b.shift_alp_R();
+      }else if (keyCode == DOWN){
+        rot += 1;
+        a.shift_alp_R();
+        b.shift_alp_L();
+      }
     }
   }
   if(key == ' '){
-    text+=b.alphabet[0];
-    a.shift_original();
-    b.shift_cipher();
+    //text+=b.alphabet[0];
+    //a.shift_original();
+    //b.shift_cipher();
+    if(mode == 0){
+      steps = 7;
+    }
   }
 }
 

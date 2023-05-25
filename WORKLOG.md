@@ -24,6 +24,8 @@ wheel
 cipher shifts and a way to express decoded messages
 - Added way to decode message
 
+## 05/24/23
+- added animation to cipher shift
 ### date y
 
 
