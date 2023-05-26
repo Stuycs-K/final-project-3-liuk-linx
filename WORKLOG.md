@@ -26,6 +26,9 @@ cipher shifts and a way to express decoded messages
 
 ## 05/24/23
 - added animation to cipher shift
+
+## 04/25/23
+- added modes switches between quick-slow and encode-decode
 ### date y
 
 
