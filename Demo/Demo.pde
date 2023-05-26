@@ -34,6 +34,9 @@ void setup(){
 }
 
 void draw(){
+  background(138);
+  textSize(10);
+  textAlign(LEFT);
   if(steps == -1){
     if(!(finish_step)){
       print("a");
@@ -86,8 +89,19 @@ void draw(){
       steps = -1;
       next_steps = 0;
     }
+  fill(255);
+  if(mode == 0){
+    text("Animation: on", 10, 19);
+  }else{
+    text("Animation: off", 10, 19);
+  }
+  if(encode){
+    text("Encode", 10, 30);
+  }else{
+    text("Decode", 10, 30);
+  }
   textSize(16);
-  background(138);
+  textAlign(CENTER);
   fill(255,0,0);
   rect(378, 5, 50, 100);
   

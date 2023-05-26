@@ -61,7 +61,7 @@ public class wheels{
   }
   //[a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z]
   public void shift_cipher(){
-    //extract the letter tab found at position zenith-1 (i.e., one counter-clockwise position past the zenith) taking it out of the disk's alphabet, temporarily leaving an unfilled 'hole.'
+    //extract the letter found at position zenith-1 (i.e., one counter-clockwise position past the zenith) taking it out of the disk's alphabet, temporarily leaving an unfilled 'hole.'
     take_zenith1();
     //Shift all letter tabs in positions zenith-2 (advancing counter-clockwise) down to and including the nadir (zenith-13), moving them in unison one position clockwise. This will close the current 'hole,' leaving a new 'hole' at the nadir position.
     for(int x = 24; x >12; x--){
