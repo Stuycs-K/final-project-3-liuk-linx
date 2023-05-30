@@ -30,7 +30,9 @@ cipher shifts and a way to express decoded messages
 ### 05/25/23
 - Added modes switches between quick-slow and encode-decode
 
-
+### 05/29/23
+- added coloration to animation
+- added another question to HW
 ## Xinqing Lin
 
 ### 05/18/23

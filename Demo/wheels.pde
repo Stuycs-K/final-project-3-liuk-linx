@@ -26,6 +26,12 @@ public class wheels{
         rotate((1.0/26) * TWO_PI);
       }
       fill(255);
+      if(original && coloration && ((g >= 4)&&(g<=13))){
+        fill(0, 255, 0);
+      }
+      if(!(original) && coloration && ((g >= 13)&&(g<=24))){
+        fill(255,0, 0);
+      }
       text(alphabet[int(g)], 0, -182);
       //text(alphabet[int(g)], (sin((g/26) * TWO_PI) * 200), (cos((g/26) * TWO_PI) * -200));
     }
