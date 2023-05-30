@@ -10,9 +10,18 @@ run python3 message.txt
 
 In order to use the visualizer:
 - run ```Demo.pde``` in Processing. 
-    - The program will start in Encrypting mode and with the visualizing animation on. In order to toggle the visualization off, press the ```m``` button. 
-- In order to encrypt, locate the plaintext character on the right disk and move it to the zenith position (under the green box). Then, press the **space**  button.
+    - On the upper left hand side are the current settings of the visualizer. You may change them with the buttons on the lower left hand side, or with a hotkey. 
+- In order to encrypt, locate the plaintext character on the right disk and move it to the zenith position (indicated by the green box) using the up and down arrow keys. Then, press the **space** button.
 - Continue locating the plaintext character on the right disk and the encrypted message will appear in the space below the disks. 
+- In order to decrypt, change the mode to decryption using the button or the hotkey. Then, locate the ciphertext character on the left disk and move it to the zenith position (indicated by the red box) using the up and down arrow keys. Then, press the **space** button. 
+
+Visualizer Hotkeys: 
+| Key | Description |
+| --- | ----------- |
+| Space | Encrypts/decrypts the current letter at the zenith position of the plaintext/ciphertext disks. |
+| ```m``` | Toggles the step-by-step animation feature on and off |
+| ```r``` | Resets the simulation | 
+| ```n``` | Changes between encryption mode and decryption mode | 
 
 
 The presentation can be found [here](PRESENTATION.md)

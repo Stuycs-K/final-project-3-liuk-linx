@@ -9,10 +9,20 @@ int length = 100;
 boolean encode = true;
 wheels a, b;
 
-int button_x = 80;
-int button_y = 450;
-int button_w = 100;
-int button_h = 70;
+int reset_button_x = 30;
+int reset_button_y = 420;
+int reset_button_w = 100;
+int reset_button_h = 40;
+
+int animation_button_x = 30;
+int animation_button_y = 470;
+int animation_button_w = 180;
+int animation_button_h = 40;
+
+int toggle_button_x = 30;
+int toggle_button_y = 520;
+int toggle_button_w = 220;
+int toggle_button_h = 40;
 
 void setup(){
   size(1200, 600);
@@ -37,9 +47,9 @@ void draw(){
   background(138);
   textSize(10);
   textAlign(LEFT);
+  noFill();
   if(steps == -1){
     if(!(finish_step)){
-      print("a");
       time = length;
       finish_step = true;
     }
@@ -48,15 +58,15 @@ void draw(){
       finish_step = false;
     }else{ 
       time-=1;
-      print(time);
     }
   }else if(steps == 7){
      a.rot -= 1.0;
      a.shift_alp_L();
+     
     steps = -1;
     next_steps = 6;
   }else if(steps == 6){
-    a.take_zenith2();
+     a.take_zenith2();
      steps = -1;
     next_steps = 5;
     }else if(steps == 5){
@@ -89,16 +99,18 @@ void draw(){
       steps = -1;
       next_steps = 0;
     }
+  
   fill(255);
+  textSize(20);
   if(mode == 0){
-    text("Animation: on", 10, 19);
+    text("Animation: on", 20, 30);
   }else{
-    text("Animation: off", 10, 19);
+    text("Animation: off", 20, 30);
   }
   if(encode){
-    text("Encode", 10, 30);
+    text("Encode", 20, 50);
   }else{
-    text("Decode", 10, 30);
+    text("Decode", 20, 50);
   }
   textSize(16);
   textAlign(CENTER);
@@ -113,9 +125,20 @@ void draw(){
   b.display(400,230);
   
   fill(181,30,13);
-  rect(button_x, button_y, button_w, button_h, 18);
+  rect(reset_button_x, reset_button_y, reset_button_w, reset_button_h, 18);
   fill(255);
-  text("Reset", button_x + button_w / 2, button_y + button_h / 2);
+  text("Reset", reset_button_x + reset_button_w / 2, reset_button_y + reset_button_h / 2);
+  
+  fill(70, 161, 207);
+  rect(animation_button_x, animation_button_y, animation_button_w, animation_button_h, 18);
+  fill(0);
+  text("Toggle Animation", animation_button_x + animation_button_w / 2, animation_button_y + animation_button_h / 2);
+
+  fill(221,160,221);
+  rect(toggle_button_x, toggle_button_y, toggle_button_w, toggle_button_h, 18);
+  fill(0);
+  text("Toggle Encrypt/Decrypt", toggle_button_x + toggle_button_w / 2, toggle_button_y + toggle_button_h / 2);
+  
   fill(0);
   textAlign(CENTER);
   textSize(30);
@@ -139,11 +162,7 @@ void keyPressed(){
     }
   }
   if(key == 'n'){
-    if(encode){
-      encode = false;
-    }else{
-      encode = true;
-    }
+    encode = !encode;
   }
   if(key == 'r'){
     setup();
@@ -182,9 +201,21 @@ void keyPressed(){
 }
 
 void mousePressed(){
-  if (mouseX >= button_x && mouseX <= button_x+button_w && 
-      mouseY >= button_y && mouseY <= button_y+button_h) {
+  if (mouseX >= reset_button_x && mouseX <= reset_button_x+reset_button_w && 
+      mouseY >= reset_button_y && mouseY <= reset_button_y+reset_button_h) {
         text = "";
         setup();
+      }
+  else if (mouseX >= animation_button_x && mouseX <= animation_button_x+animation_button_w && 
+      mouseY >= animation_button_y && mouseY <= animation_button_y+animation_button_h) {
+            if((mode == 0)&&(steps == 0)){
+      mode = 1;
+    }else if(mode == 1){
+      mode = 0;
+    }
+      }
+  else if (mouseX >= toggle_button_x && mouseX <= toggle_button_x+toggle_button_w && 
+      mouseY >= toggle_button_y && mouseY <= toggle_button_y+toggle_button_h) {
+      encode = !encode;
       }
 }

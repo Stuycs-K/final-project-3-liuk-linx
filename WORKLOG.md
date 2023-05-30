@@ -7,29 +7,28 @@
 - Research information about the chaocipher algorithm
 - Got started on a visualization in Processing
 
-## 05/21/23
+### 05/21/23
 
 - Translated algo described in resources into Processing.
 - Got a wheel class up and running
 
-## 05/22/23
+### 05/22/23
 
 - Did research into rotation
 - Created a method to rotate wheel, and a display and rotate method for 
 wheel
 
-## 05/23/23
+### 05/23/23
 
 - Connected wheels so they rotate how actual wheels do, incorporated the 
 cipher shifts and a way to express decoded messages
 - Added way to decode message
 
-## 05/24/23
-- added animation to cipher shift
+### 05/24/23
+- Added animation to cipher shift
 
-## 04/25/23
-- added modes switches between quick-slow and encode-decode
-### date y
+### 05/25/23
+- Added modes switches between quick-slow and encode-decode
 
 
 ## Xinqing Lin
@@ -61,6 +60,12 @@ cipher shifts and a way to express decoded messages
 ### 5/25/23
 
 - Wrote the README.md
+
+### 5/29/23
+- Added buttons for toggling animation/modes as alternatives to hotkeys on Processing
+- Updated README.md with new instructions and 
+- Updated PRESENTATION.md with more history, a step-by-step guide on the encryption algorithm, a brief explanation of the decryption algorithm, and security stats
+- Added 2 preliminary questions to HOMEWORK.md
 
 References and Resources:
 - [Chaocipher Revealed Algorithm](http://www.chaocipher.com/ActualChaocipher/Chaocipher-Revealed-Algorithm.pdf)
