@@ -2,4 +2,4 @@
 
 2. What are some similarities between the Chaocipher and the Vigenere cipher?
 
-3. What the major difference between Chaocipher and the Enigma Machine
+3. Write sudo code to explain the permutation of the wheels after one encryption.
