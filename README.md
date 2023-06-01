@@ -1,4 +1,5 @@
-# Chaocipher: Kevin Liu and Xinqing Lin: Rotisserlin Chaoken
+# Chaocipher
+### Kevin Liu and Xinqing Lin: Rotisserlin Chaoken
 
 The Chaocipher is a cipher based on two rotating disks. We have a python encoder and decoder as well as a visualization on Processing to explain the algorithm. 
 
