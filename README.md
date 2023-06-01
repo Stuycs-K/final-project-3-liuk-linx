@@ -1,12 +1,18 @@
-# Chaocipher
+# Chaocipher: Kevin Liu and Xinqing Lin: Rotisserlin Chaoken
 
 The Chaocipher is a cipher based on two rotating disks. We have a python encoder and decoder as well as a visualization on Processing to explain the algorithm. 
 
-In order to use the python encoder/decoder, open your terminal and run the following command:
+In order to use the python encoder, open your terminal and clone the repository.
 ```
-run python3 message.txt
+cd encoder
+python3 encoder.py message.txt
 ```
 (message.txt being a text file containing the message you want to encrypt/decrypt.)
+To use the decoder:
+```
+cd decoder
+python3 decoder.py message.txt
+```
 
 In order to use the visualizer:
 - run ```Demo.pde``` in Processing. 
