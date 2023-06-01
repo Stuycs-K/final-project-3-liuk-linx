@@ -1,10 +1,12 @@
 public class letter{
   char value;
-  public letter(char val){
+  color col;
+  public letter(char val, color col){
     value = val;
+    this.col = col;
   }
-public void show(int x, int y, int angle){
-   rotate(angle);
+public void show(int x, int y){
+   fill(col);
    text(value, x, y);
   }
 }

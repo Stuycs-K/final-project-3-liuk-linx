@@ -5,7 +5,7 @@ int steps = 0;
 int next_steps = 0;
 boolean finish_step = false;
 int time = 0;
-int length = 100;
+int length = 200;
 boolean encode = true;
 wheels a, b;
 
@@ -76,7 +76,7 @@ void draw(){
         x = -1;
       }
     }
-    a.alphabet[13] = ' ';
+    a.alphabet[13] = new letter(' ', a.alphabet[13].col);
     steps = -1;
     next_steps = 4;
     }else if(steps == 4){
@@ -88,10 +88,11 @@ void draw(){
       steps = -1;
       next_steps = 2;
     }else if(steps == 2){
+      b.coloration = true;
       for(int x = 24; x >12; x--){
         b.alphabet[x+1] = b.alphabet[x];
       }
-      b.alphabet[13] = ' ';
+      b.alphabet[13] = new letter(' ', b.alphabet[13].col);
       steps = -1;
       next_steps = 1;
     }else if (steps == 1){
@@ -176,15 +177,15 @@ void keyPressed(){
       steps = -1;
       next_steps = 7;
       if(encode){
-        text+=b.alphabet[0];
+        text+=b.alphabet[0].value;
       }else{
-        text+=a.alphabet[0];
+        text+=a.alphabet[0].value;
       }
     }else if(mode == 1){
       if(encode){
-        text+=b.alphabet[0];
+        text+=b.alphabet[0].value;
       }else{
-        text+=a.alphabet[0];
+        text+=a.alphabet[0].value;
       }    
     a.shift_original();
     b.shift_cipher();

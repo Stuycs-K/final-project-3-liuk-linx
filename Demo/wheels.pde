@@ -1,14 +1,18 @@
 public class wheels{
   float rot = 0.0;
-  char[] alphabet;
+  letter[] alphabet;
   boolean original;
-  char temp;
+  letter temp;
   color ani;
   boolean coloration = false;
   wheels linked = null;
   public wheels(char[] alphabet, boolean original, color ani, wheels connection){
     rot = 0.0;
-    this.alphabet = alphabet;
+    
+    this.alphabet = new letter[alphabet.length];
+    for(x = 0; x < alphabet.length; x++){
+      this.alphabet[x] = new letter(alphabet[x], color(random(100,255), random(100,255), random(100,255)));
+    }
     this.original = original;
     linked = connection;
     this.ani = ani;
@@ -26,13 +30,8 @@ public class wheels{
         rotate((1.0/26) * TWO_PI);
       }
       fill(255);
-      if(original && coloration && ((g >= 4)&&(g<=13))){
-        fill(0, 255, 0);
-      }
-      if(!(original) && coloration && ((g >= 13)&&(g<=24))){
-        fill(255,0, 0);
-      }
-      text(alphabet[int(g)], 0, -182);
+      alphabet[int(g)].show(0, -182);
+      //text(alphabet[int(g)], 0, -182);
       //text(alphabet[int(g)], (sin((g/26) * TWO_PI) * 200), (cos((g/26) * TWO_PI) * -200));
     }
     rotate((1.0/26) * TWO_PI);
@@ -41,6 +40,7 @@ public class wheels{
     }else{
       rotate(-1*((rot/26) * TWO_PI));
     }
+    fill(255);
     square(-25,-25,50);
      if(original){
        rotate(-1*((rot/26) * TWO_PI));
@@ -51,7 +51,10 @@ public class wheels{
   }
   public wheels(char[] alphabet, boolean original, color ani){
     this.ani = ani;
-    this.alphabet = alphabet;
+    this.alphabet = new letter[alphabet.length];
+    for(x = 0; x < alphabet.length; x++){
+      this.alphabet[x] = new letter(alphabet[x], color(random(100,255), random(100,255), random(100,255)));
+    }
     this.original = original;
   }
   public void link(wheels connection){
@@ -59,11 +62,11 @@ public class wheels{
   }
   public void take_zenith1(){
     temp = alphabet[25];
-    alphabet[25] = ' ';
+    alphabet[25] = new letter(' ', alphabet[25].col);
   }
   public void take_zenith2(){
     temp = alphabet[2];
-    alphabet[2] = ' ';
+    alphabet[2] = new letter(' ', alphabet[2].col);
   }
   //[a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z]
   public void shift_cipher(){
@@ -74,14 +77,14 @@ public class wheels{
       alphabet[x+1] = alphabet[x];
       print(alphabet[x]);
     }
-    alphabet[13] = ' ';
+    alphabet[13] = new letter(' ', alphabet[13].col);
     //Insert the previously extracted letter tab into the empty nadir position.
     alphabet[13] = temp;
   }
   public void shift_original(){
     rot-=1;
     //Disengage the two disks, rotate the right disk one position counter-clockwise (i.e., the current letter at the zenith should rotate to position zenith-1), and reengage the two disks.
-    char temp2 = alphabet[0];
+    letter temp2 = alphabet[0];
     for(int x = 1; x<26; x++){
       alphabet[x-1] = alphabet[x];
       //println(alphabet[x]);
