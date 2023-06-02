@@ -33,6 +33,10 @@ cipher shifts and a way to express decoded messages
 ### 05/29/23
 - added coloration to animation
 - added another question to HW
+
+## 06/01/23
+- Added colored text 
+- added length changing keybind.
 ## Xinqing Lin
 
 ### 05/18/23
