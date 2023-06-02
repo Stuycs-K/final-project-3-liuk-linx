@@ -113,6 +113,7 @@ void draw(){
   }else{
     text("Decode", 20, 50);
   }
+  text("Time: " + length, 20, 70);
   textSize(16);
   textAlign(CENTER);
   fill(255,0,0);
@@ -159,6 +160,11 @@ void keyPressed(){
         b.rot += 1;
         a.shift_alp_R();
         b.shift_alp_L();
+      }
+      if(keyCode == LEFT){
+        length-=20;
+      }else if (keyCode == RIGHT){
+        length+=20;
       }
     }
   }
